@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hội viên &amp; Ưu đãi – MiniMart</title>
+  <link rel="icon" href="images/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/member.css">
+</head>
+<body>
+
+  <!-- ===== HEADER (mẫu chung) ===== -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">🛒 Mini<span>Mart</span></a>
+      <button class="menu-btn" onclick="doiMenu()" aria-label="Mở menu">☰</button>
+      <nav id="menu" class="nav">
+        <a href="index.html">Trang chủ</a>
+        <a href="products.html">Sản phẩm</a>
+        <a href="member.html" class="active">Hội viên &amp; Ưu đãi</a>
+        <a href="cart.html">🧺 Giỏ hàng</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ============ KHU KHÁCH CHƯA LÀ HỘI VIÊN ============ -->
+    <div id="khuKhach">
+      <section class="gioi-thieu">
+        <h1>Trở thành hội viên MiniMart</h1>
+        <p>Tích điểm mỗi lần mua sắm, đổi quà và nhận ưu đãi dành riêng cho hội viên.</p>
+      </section>
+
+      <h2 class="tieu-de">Quyền lợi hội viên</h2>
+      <div class="luoi-3">
+        <div class="the-quyen"><div class="bieu-tuong">⭐</div><h3>Tích điểm</h3><p>Mỗi 10.000đ mua hàng tích 1 điểm, dùng điểm để giảm giá.</p></div>
+        <div class="the-quyen"><div class="bieu-tuong">🎁</div><h3>Quà sinh nhật</h3><p>Voucher 50.000đ và quà tặng nhân dịp sinh nhật hội viên.</p></div>
+        <div class="the-quyen"><div class="bieu-tuong">🚚</div><h3>Miễn phí giao hàng</h3><p>Hội viên Vàng trở lên được miễn phí giao hàng mọi đơn.</p></div>
+      </div>
+
+      <h2 class="tieu-de">Đăng ký / Đăng nhập</h2>
+      <div class="luoi-2">
+        <!-- Form đăng ký -->
+        <form class="khung" onsubmit="return false;">
+          <h3>Đăng ký hội viên</h3>
+          <div class="nhom-form">
+            <label for="dkTen">Họ và tên</label>
+            <input type="text" id="dkTen" placeholder="Nguyễn Văn An">
+            <span class="loi" id="loiDkTen"></span>
+          </div>
+          <div class="nhom-form">
+            <label for="dkEmail">Email</label>
+            <input type="text" id="dkEmail" placeholder="ten@email.com">
+            <span class="loi" id="loiDkEmail"></span>
+          </div>
+          <div class="nhom-form">
+            <label for="dkMatKhau">Mật khẩu</label>
+            <input type="password" id="dkMatKhau" placeholder="Ít nhất 6 ký tự">
+            <span class="loi" id="loiDkMatKhau"></span>
+          </div>
+          <button type="button" class="btn btn-cam" onclick="dangKy()">Đăng ký</button>
+          <div id="dkThanhCong" class="thanh-cong"></div>
+        </form>
+
+        <!-- Form đăng nhập -->
+        <form class="khung" onsubmit="return false;">
+          <h3>Đăng nhập</h3>
+          <div class="nhom-form">
+            <label for="dnEmail">Email</label>
+            <input type="text" id="dnEmail" placeholder="ten@email.com">
+            <span class="loi" id="loiDnEmail"></span>
+          </div>
+          <div class="nhom-form">
+            <label for="dnMatKhau">Mật khẩu</label>
+            <input type="password" id="dnMatKhau" placeholder="Nhập mật khẩu">
+            <span class="loi" id="loiDnMatKhau"></span>
+          </div>
+          <button type="button" class="btn" onclick="dangNhap()">Đăng nhập</button>
+          <p class="goi-y">Bản mô phỏng: nhập email có dấu @ và mật khẩu bất kỳ để xem khu hội viên.</p>
+        </form>
+      </div>
+    </div>
+
+    <!-- ============ KHU HỘI VIÊN (ẩn sẵn) ============ -->
+    <div id="khuHoiVien" style="display: none;">
+      <section class="chao-hoi-vien">
+        <div>
+          <h1>Xin chào, Nguyễn Văn An 👋</h1>
+          <p>Mã hội viên: MM-000123</p>
+        </div>
+        <button class="btn btn-vien" onclick="dangXuat()">Đăng xuất</button>
+      </section>
+
+      <div class="luoi-3">
+        <div class="o-so"><span class="nhan-o">Điểm hiện có</span><span class="so-lon">1.250</span><span class="phu">điểm</span></div>
+        <div class="o-so"><span class="nhan-o">Hạng thẻ</span><span class="badge badge-bac">🥈 Bạc</span><span class="phu">Còn 750 điểm nữa lên hạng Vàng</span></div>
+        <div class="o-so"><span class="nhan-o">Thành viên từ</span><span class="so-lon nho">03/2025</span><span class="phu">Đã mua 14 đơn hàng</span></div>
+      </div>
+
+      <h2 class="tieu-de">Ưu đãi riêng cho bạn</h2>
+      <div class="luoi-3">
+        <div class="the-uu-dai rieng"><span class="badge badge-cam">Riêng bạn</span><h3>Giảm 10%</h3><p>Toàn bộ rau củ quả – hết hạn 31/12</p><a href="products.html" class="btn">Mua ngay</a></div>
+        <div class="the-uu-dai rieng"><span class="badge badge-cam">Riêng bạn</span><h3>Voucher 30.000đ</h3><p>Cho đơn từ 200.000đ – hết hạn 30/11</p><a href="cart.html" class="btn">Dùng ở giỏ hàng</a></div>
+        <div class="the-uu-dai rieng"><span class="badge badge-cam">Riêng bạn</span><h3>Nhân đôi điểm</h3><p>Tích gấp đôi điểm cho nhóm đồ uống</p><a href="products.html" class="btn">Xem đồ uống</a></div>
+      </div>
+
+      <h2 class="tieu-de">Lịch sử mua hàng</h2>
+      <div class="cuon-bang">
+        <table class="bang-ls">
+          <thead>
+            <tr><th>Mã đơn</th><th>Ngày mua</th><th>Số món</th><th>Tổng tiền</th><th>Điểm tích</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>#MM1042</td><td>05/10/2026</td><td>6</td><td>186.000đ</td><td>+18</td></tr>
+            <tr><td>#MM1027</td><td>28/09/2026</td><td>4</td><td>124.000đ</td><td>+12</td></tr>
+            <tr><td>#MM1009</td><td>15/09/2026</td><td>9</td><td>312.000đ</td><td>+31</td></tr>
+            <tr><td>#MM0986</td><td>02/09/2026</td><td>3</td><td>78.000đ</td><td>+7</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ============ ƯU ĐÃI CHUNG (ai cũng xem được) ============ -->
+    <section class="uu-dai-chung">
+      <h2 class="tieu-de">Ưu đãi chung</h2>
+      <div class="luoi-3">
+        <div class="the-uu-dai"><span class="badge badge-xanh">Mọi khách hàng</span><h3>Freeship đơn 199.000đ</h3><p>Áp dụng trong bán kính 3km quanh cửa hàng.</p></div>
+        <div class="the-uu-dai"><span class="badge badge-xanh">Mọi khách hàng</span><h3>Mua 2 tặng 1</h3><p>Sữa chua uống men sống – đến hết tháng này.</p></div>
+        <div class="the-uu-dai"><span class="badge badge-xanh">Mọi khách hàng</span><h3>Giảm 20% rau củ</h3><p>Mỗi sáng thứ Bảy, từ 7:00 đến 10:00.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER (mẫu chung) ===== -->
+  <footer class="footer">
+    <div class="container footer-luoi">
+      <div>
+        <h4>🛒 MiniMart</h4>
+        <p>Siêu thị mini tiện lợi – hàng tươi mỗi ngày, giao nhanh tận nhà.</p>
+        <p>📍 123 Đường Mẫu, Quận 1 &nbsp;|&nbsp; ☎ 0900 000 000</p>
+      </div>
+      <div>
+        <h4>Điều hướng</h4>
+        <a href="index.html">Trang chủ</a>
+        <a href="products.html">Sản phẩm</a>
+        <a href="cart.html">Giỏ hàng</a>
+        <a href="member.html">Hội viên &amp; Ưu đãi</a>
+      </div>
+      <div>
+        <h4>Hỗ trợ</h4>
+        <a href="#">Giờ mở cửa: 7:00 – 22:00</a>
+        <a href="#">Phí giao hàng: 15.000đ</a>
+      </div>
+    </div>
+    <div class="ban-quyen">© 2026 MiniMart – Bài tập lớn Thiết kế Web</div>
+  </footer>
+
+  <script src="js/member.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giỏ hàng – MiniMart</title>
+  <link rel="icon" href="images/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+
+  <!-- ===== HEADER (mẫu chung) ===== -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">🛒 Mini<span>Mart</span></a>
+      <button class="menu-btn" onclick="doiMenu()" aria-label="Mở menu">☰</button>
+      <nav id="menu" class="nav">
+        <a href="index.html">Trang chủ</a>
+        <a href="products.html">Sản phẩm</a>
+        <a href="member.html">Hội viên &amp; Ưu đãi</a>
+        <a href="cart.html" class="active">🧺 Giỏ hàng</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="tieu-de">Giỏ hàng &amp; đặt hàng</h1>
+
+    <!-- ===== GIỎ TRỐNG ===== -->
+    <div id="gioTrong" class="gio-trong">
+      <div class="icon">🧺</div>
+      <p>Giỏ hàng của bạn đang trống</p>
+      <a href="products.html" class="btn">Tiếp tục mua sắm</a>
+    </div>
+
+    <!-- ===== ĐẶT HÀNG XONG ===== -->
+    <div id="datXong" class="gio-trong">
+      <div class="icon">🎉</div>
+      <p id="loiCamOn"></p>
+      <a href="products.html" class="btn">Tiếp tục mua sắm</a>
+    </div>
+
+    <!-- ===== NỘI DUNG GIỎ ===== -->
+    <div id="noiDungGio" class="cart-layout">
+
+      <!-- Cột trái: bảng giỏ hàng -->
+      <div class="cot-bang">
+        <table class="bang-gio">
+          <thead>
+            <tr>
+              <th>Sản phẩm</th>
+              <th>Đơn giá</th>
+              <th>Số lượng</th>
+              <th>Thành tiền</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="thanBang">
+            <!-- Các dòng sản phẩm được JavaScript tạo từ giỏ hàng -->
+          </tbody>
+        </table>
+
+        <!-- Form nhận hàng -->
+        <div class="khung form-nhan">
+          <h2>Thông tin nhận hàng</h2>
+          <div class="nhom-form">
+            <label for="ten">Họ và tên</label>
+            <input type="text" id="ten" placeholder="Nguyễn Văn A">
+            <span class="loi" id="loiTen"></span>
+          </div>
+          <div class="nhom-form">
+            <label for="sdt">Số điện thoại</label>
+            <input type="text" id="sdt" placeholder="0912345678" maxlength="10">
+            <span class="loi" id="loiSdt"></span>
+          </div>
+          <div class="nhom-form">
+            <label for="diachi">Địa chỉ nhận hàng</label>
+            <textarea id="diachi" rows="2" placeholder="Số nhà, đường, phường/xã, quận/huyện"></textarea>
+            <span class="loi" id="loiDiachi"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cột phải: tổng tiền -->
+      <aside class="khung tong-tien">
+        <h2>Tóm tắt đơn hàng</h2>
+        <div class="dong-tien"><span>Tạm tính</span><span id="tamTinh">0đ</span></div>
+        <div class="dong-tien"><span>Phí giao hàng</span><span id="phiGiao">15.000đ</span></div>
+        <div class="dong-tien tong"><span>Tổng cộng</span><span id="tongTien">0đ</span></div>
+        <button class="btn btn-cam nut-dat" onclick="datHang()">Đặt hàng</button>
+        <div id="thanhCong" class="thanh-cong"></div>
+        <a href="products.html" class="tiep-tuc">← Tiếp tục mua sắm</a>
+      </aside>
+    </div>
+  </main>
+
+  <!-- ===== FOOTER (mẫu chung) ===== -->
+  <footer class="footer">
+    <div class="container footer-luoi">
+      <div>
+        <h4>🛒 MiniMart</h4>
+        <p>Siêu thị mini tiện lợi – hàng tươi mỗi ngày, giao nhanh tận nhà.</p>
+        <p>📍 123 Đường Mẫu, Quận 1 &nbsp;|&nbsp; ☎ 0900 000 000</p>
+      </div>
+      <div>
+        <h4>Điều hướng</h4>
+        <a href="index.html">Trang chủ</a>
+        <a href="products.html">Sản phẩm</a>
+        <a href="cart.html">Giỏ hàng</a>
+        <a href="member.html">Hội viên &amp; Ưu đãi</a>
+      </div>
+      <div>
+        <h4>Hỗ trợ</h4>
+        <a href="#">Giờ mở cửa: 7:00 – 22:00</a>
+        <a href="#">Phí giao hàng: 15.000đ</a>
+      </div>
+    </div>
+    <div class="ban-quyen">© 2026 MiniMart – Bài tập lớn Thiết kế Web</div>
+  </footer>
+
+  <script src="js/cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+/* ===== cart.css – TV4: Giỏ hàng & đặt hàng ===== */
+main.container { padding-top: 28px; padding-bottom: 12px; }
+
+/* Giỏ trống (ẩn sẵn, JS sẽ hiện khi xóa hết) */
+.gio-trong { display: none; text-align: center; background: #fff; border: 1px solid var(--vien); border-radius: 12px; padding: 48px 16px; }
+.gio-trong .icon { font-size: 72px; }
+.gio-trong p { font-size: 20px; color: var(--chu-phu); margin: 8px 0 18px; }
+
+/* Bố cục 2 cột */
+.cart-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 24px; align-items: start; }
+.khung { background: #fff; border: 1px solid var(--vien); border-radius: 12px; padding: 20px; }
+.khung h2 { font-size: 19px; margin-bottom: 14px; }
+
+/* Bảng giỏ hàng */
+.cot-bang { min-width: 0; }
+.bang-gio { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid var(--vien); border-radius: 12px; overflow: hidden; margin-bottom: 20px; }
+.bang-gio th { background: var(--xanh-nhat); text-align: left; padding: 12px; font-size: 14px; }
+.bang-gio td { padding: 12px; border-top: 1px solid var(--vien); vertical-align: middle; }
+.hinh { display: inline-block; width: 40px; height: 40px; line-height: 40px; text-align: center; font-size: 24px; background: var(--xanh-nhat); border-radius: 8px; margin-right: 6px; }
+.nut-sl { width: 30px; height: 30px; border: 1px solid var(--vien); border-radius: 6px; background: #fff; font-size: 16px; cursor: pointer; }
+.nut-sl:hover { background: var(--xanh-nhat); border-color: var(--xanh); }
+.sl { display: inline-block; min-width: 28px; text-align: center; font-weight: 700; }
+.thanhtien { font-weight: 700; color: var(--cam-dam); white-space: nowrap; }
+.nut-xoa { padding: 6px 12px; border: 1px solid var(--do); border-radius: 6px; background: #fff; color: var(--do); cursor: pointer; }
+.nut-xoa:hover { background: var(--do); color: #fff; }
+
+/* Tổng tiền */
+.tong-tien { position: sticky; top: 80px; }
+.dong-tien { display: flex; justify-content: space-between; padding: 8px 0; }
+.dong-tien.tong { border-top: 2px dashed var(--vien); margin-top: 6px; padding-top: 14px; font-size: 20px; font-weight: 800; }
+.dong-tien.tong span:last-child { color: var(--cam-dam); }
+.nut-dat { width: 100%; margin-top: 12px; padding: 14px; font-size: 17px; }
+.thanh-cong { display: none; margin-top: 14px; padding: 12px; background: var(--xanh-nhat); border: 1px solid var(--xanh); border-radius: 8px; color: var(--xanh-dam); font-weight: 600; }
+.tiep-tuc { display: block; text-align: center; margin-top: 14px; color: var(--xanh-dam); font-weight: 600; }
+.tiep-tuc:hover { text-decoration: underline; }
+
+/* Điện thoại: 1 cột + bảng cuộn ngang trong khung riêng */
+@media (max-width: 768px) {
+  .cart-layout { grid-template-columns: 1fr; }
+  .tong-tien { position: static; order: -1; }
+  .cot-bang { overflow-x: auto; }
+  .bang-gio { min-width: 520px; }
+  .form-nhan { min-width: 0; }
+}
+
+/* Ảnh sản phẩm trong bảng giỏ hàng */
+.hinh { width: 52px; height: 52px; line-height: 1; padding: 3px; vertical-align: middle; font-size: 26px; }
+.hinh img { display: block; width: 100%; height: 100%; object-fit: contain; }
+
+/* ===== Ảnh thật trong bảng giỏ hàng ===== */
+.hinh { padding: 0; overflow: hidden; }
+.hinh img { object-fit: cover; }

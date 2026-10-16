@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sản phẩm – MiniMart</title>
+  <link rel="icon" href="images/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/products.css">
+</head>
+<body>
+
+  <!-- ===== HEADER (mẫu chung) ===== -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">🛒 Mini<span>Mart</span></a>
+      <button class="menu-btn" onclick="doiMenu()" aria-label="Mở menu">☰</button>
+      <nav id="menu" class="nav">
+        <a href="index.html">Trang chủ</a>
+        <a href="products.html" class="active">Sản phẩm</a>
+        <a href="member.html">Hội viên &amp; Ưu đãi</a>
+        <a href="cart.html">🧺 Giỏ hàng</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="tieu-de">Tất cả sản phẩm</h1>
+
+    <!-- ===== KHU LỌC ===== -->
+    <div class="khu-loc">
+      <div class="nut-loc">
+        <button class="btn-loc active" onclick="loc('tatca', this)">Tất cả</button>
+        <button class="btn-loc" onclick="loc('sua', this)"><img class="icon-loc" src="images/products/sua-tuoi.jpg" alt=""> Sữa</button>
+        <button class="btn-loc" onclick="loc('rau', this)"><img class="icon-loc" src="images/products/rau-cai.jpg" alt=""> Rau củ</button>
+        <button class="btn-loc" onclick="loc('thit', this)"><img class="icon-loc" src="images/products/thit-ba-chi.jpg" alt=""> Thịt &amp; trứng</button>
+        <button class="btn-loc" onclick="loc('banh', this)"><img class="icon-loc" src="images/products/banh-quy.jpg" alt=""> Bánh kẹo</button>
+        <button class="btn-loc" onclick="loc('nuoc', this)"><img class="icon-loc" src="images/products/nuoc-cam.jpg" alt=""> Đồ uống</button>
+        <button class="btn-loc" onclick="loc('giadung', this)"><img class="icon-loc" src="images/products/nuoc-rua-chen.jpg" alt=""> Gia dụng</button>
+      </div>
+      <input type="text" id="timkiem" class="o-timkiem" placeholder="Tìm theo tên sản phẩm..." oninput="timKiem()" aria-label="Tìm theo tên">
+    </div>
+
+    <!-- ===== LƯỚI SẢN PHẨM (12 thẻ viết sẵn) ===== -->
+    <div class="luoi-sp" id="luoi">
+        <div class="card the" data-category="sua">
+          <div class="card-anh"><img src="images/products/sua-tuoi.jpg" alt="Sữa tươi nguyên chất 1L"></div>
+          <div class="card-noidung">
+            <div class="card-ten">Sữa tươi nguyên chất 1L</div>
+            <div class="card-gia">32.000đ</div>
+            <a href="product-detail.html" class="btn btn-vien">Xem chi tiết</a>
+            <button class="btn btn-cam nut-them-gio" onclick="themGio(this)">🧺 Thêm vào giỏ</button>
+          </div>
+        </div>
+        <div class="card the" data-category="sua">
+          <div class="card-anh"><img src="images/products/sua-chua.jpg" alt="Sữa chua uống men sống (lốc 4)"></div>
+          <div class="card-noidung">
+            <div class="card-ten">Sữa chua uống men sống (lốc 4)</div>
+            <div class="card-gia">28.000đ</div>
+            <a href="product-detail.html" class="btn btn-vien">Xem chi tiết</a>
+            <button class="btn btn-cam nut-them-gio" onclick="themGio(this)">🧺 Thêm vào giỏ</button>
+          </div>
+        </div>
+        <div class="card the" data-category="rau">
+          <div class="card-anh"><img src="images/products/rau-cai.jpg" alt="Rau cải xanh 500g"></div>
+          <div class="card-noidung">
+            <div class="card-ten">Rau cải xanh 500g</div>
+            <div class="card-gia">15.000đ</div>
+            <a href="product-detail.html" class="btn btn-vien">Xem chi tiết</a>
+            <button class="btn btn-cam nut-them-gio" onclick="themGio(this)">🧺 Thêm vào giỏ</button>
+          </div>
+        </div>
+        <div class="card the" data-category="rau">
+          <div class="card-anh"><img src="images/products/ca-chua.jpg" alt="Cà chua tươi 500g"></div>
+          <div class="card-noidung">
+            <div class="card-ten">Cà chua tươi 500g</div>
+            <div class="card-gia">20.000đ</div>
+            <a href="product-detail.html" class="btn btn-vien">Xem chi tiết</a>
+            <button class="btn btn-cam nut-them-gio" onclick="themGio(this)">🧺 Thêm vào giỏ</button>
+          </div>
+        </div>
+        <div class="card the" data-category="thit">
+          <div class="card-anh"><img src="images/products/thit-ba-chi.jpg" alt="Thịt ba chỉ heo 500g"></div>
+          <div class="card-noidung">
+            <div class="card-ten">Thịt ba chỉ heo 500g</div>
+            <div class="card-gia">85.000đ</div>
+            <a href="product-detail.html" class="btn btn-vien">Xem chi tiết</a>
+            <button class="btn btn-cam nut-them-gio" onclick="themGio(this)">🧺 Thêm vào giỏ</button>
+          </div>
+        </div>
+        <div class="card the" data-category="thit">
+          <div class="card-anh"><img src="images/products/trung-ga.jpg" alt="Trứng gà sạch (hộp 10 quả)"></div>
+          <div class="card-noidung">
+            <div class="card-ten">Trứng gà sạch (hộp 10 quả)</div>
+            <div class="card-gia">35.000đ</div>
+            <a href="product-detail.html" class="btn btn-vien">Xem chi tiết</a>
+            <button class="btn btn-cam nut-them-gio" onclick="themGio(this)">🧺 Thêm vào giỏ</button>
+          </div>
+        </div>
+        <div class="card the" data-category="banh">
+          <div class="card-anh"><img src="images/products/banh-quy.jpg" alt="Bánh quy bơ giòn tan"></div>
+          <div class="card-noidung">
+            <div class="card-ten">Bánh quy bơ giòn tan</div>
+            <div class="card-gia">25.000đ</div>
+            <a href="product-detail.html" class="btn btn-vien">Xem chi tiết</a>
+            <button class="btn btn-cam nut-them-gio" onclick="themGio(this)">🧺 Thêm vào giỏ</button>
+          </div>
+        </div>
+        <div class="card the" data-category="banh">
+          <div class="card-anh"><img src="images/products/snack.jpg" alt="Snack khoai tây vị tự nhiên"></div>
+          <div class="card-noidung">
+            <div class="card-ten">Snack khoai tây vị tự nhiên</div>
+            <div class="card-gia">12.000đ</div>
+            <a href="product-detail.html" class="btn btn-vien">Xem chi tiết</a>
+            <button class="btn btn-cam nut-them-gio" onclick="themGio(this)">🧺 Thêm vào giỏ</button>
+          </div>
+        </div>
+        <div class="card the" data-category="nuoc">
+          <div class="card-anh"><img src="images/products/nuoc-suoi.jpg" alt="Nước suối tinh khiết 500ml"></div>
+          <div class="card-noidung">
+            <div class="card-ten">Nước suối tinh khiết 500ml</div>
+            <div class="card-gia">6.000đ</div>
+            <a href="product-detail.html" class="btn btn-vien">Xem chi tiết</a>
+            <button class="btn btn-cam nut-them-gio" onclick="themGio(this)">🧺 Thêm vào giỏ</button>
+          </div>
+        </div>
+        <div class="card the" data-category="nuoc">
+          <div class="card-anh"><img src="images/products/nuoc-cam.jpg" alt="Nước cam ép 1L"></div>
+          <div class="card-noidung">
+            <div class="card-ten">Nước cam ép 1L</div>
+            <div class="card-gia">30.000đ</div>
+            <a href="product-detail.html" class="btn btn-vien">Xem chi tiết</a>
+            <button class="btn btn-cam nut-them-gio" onclick="themGio(this)">🧺 Thêm vào giỏ</button>
+          </div>
+        </div>
+        <div class="card the" data-category="giadung">
+          <div class="card-anh"><img src="images/products/nuoc-rua-chen.jpg" alt="Nước rửa chén hương chanh"></div>
+          <div class="card-noidung">
+            <div class="card-ten">Nước rửa chén hương chanh</div>
+            <div class="card-gia">38.000đ</div>
+            <a href="product-detail.html" class="btn btn-vien">Xem chi tiết</a>
+            <button class="btn btn-cam nut-them-gio" onclick="themGio(this)">🧺 Thêm vào giỏ</button>
+          </div>
+        </div>
+        <div class="card the" data-category="giadung">
+          <div class="card-anh"><img src="images/products/giay-ve-sinh.jpg" alt="Giấy vệ sinh (lốc 10 cuộn)"></div>
+          <div class="card-noidung">
+            <div class="card-ten">Giấy vệ sinh (lốc 10 cuộn)</div>
+            <div class="card-gia">45.000đ</div>
+            <a href="product-detail.html" class="btn btn-vien">Xem chi tiết</a>
+            <button class="btn btn-cam nut-them-gio" onclick="themGio(this)">🧺 Thêm vào giỏ</button>
+          </div>
+        </div>
+    </div>
+
+    <p id="khongthay" class="khong-thay">😕 Không tìm thấy sản phẩm phù hợp.</p>
+  </main>
+
+  <div id="thongbao" class="toast"></div>
+
+  <!-- ===== FOOTER (mẫu chung) ===== -->
+  <footer class="footer">
+    <div class="container footer-luoi">
+      <div>
+        <h4>🛒 MiniMart</h4>
+        <p>Siêu thị mini tiện lợi – hàng tươi mỗi ngày, giao nhanh tận nhà.</p>
+        <p>📍 123 Đường Mẫu, Quận 1 &nbsp;|&nbsp; ☎ 0900 000 000</p>
+      </div>
+      <div>
+        <h4>Điều hướng</h4>
+        <a href="index.html">Trang chủ</a>
+        <a href="products.html">Sản phẩm</a>
+        <a href="cart.html">Giỏ hàng</a>
+        <a href="member.html">Hội viên &amp; Ưu đãi</a>
+      </div>
+      <div>
+        <h4>Hỗ trợ</h4>
+        <a href="#">Giờ mở cửa: 7:00 – 22:00</a>
+        <a href="#">Phí giao hàng: 15.000đ</a>
+      </div>
+    </div>
+    <div class="ban-quyen">© 2026 MiniMart – Bài tập lớn Thiết kế Web</div>
+  </footer>
+
+  <script src="js/products.js"></script>
+</body>
+</html>

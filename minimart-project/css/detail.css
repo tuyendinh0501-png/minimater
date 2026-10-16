@@ -1,0 +1,59 @@
+/* ===== detail.css – TV3: Chi tiết sản phẩm ===== */
+main.container { padding-top: 20px; padding-bottom: 12px; }
+.duong-dan { color: var(--chu-phu); font-size: 14px; margin-bottom: 6px; }
+.duong-dan a:hover { color: var(--xanh); text-decoration: underline; }
+.quay-lai { display: inline-block; color: var(--xanh-dam); font-weight: 600; margin-bottom: 16px; }
+.quay-lai:hover { text-decoration: underline; }
+
+/* 2 cột: ảnh | thông tin */
+.chi-tiet { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; background: #fff; border: 1px solid var(--vien); border-radius: 12px; padding: 24px; }
+
+.anh-lon { height: 340px; display: flex; align-items: center; justify-content: center; font-size: 160px; background: var(--xanh-nhat); border-radius: 12px; }
+.anh-nho { display: flex; gap: 10px; margin-top: 12px; }
+.anh-nho button { width: 64px; height: 64px; font-size: 32px; background: var(--xanh-nhat); border: 2px solid transparent; border-radius: 8px; cursor: pointer; }
+.anh-nho button:hover { border-color: var(--xanh); }
+
+.cot-tin h1 { font-size: 28px; margin-bottom: 8px; }
+.gia { font-size: 30px; font-weight: 800; color: var(--cam-dam); margin-bottom: 6px; }
+.tinh-trang { color: var(--xanh-dam); font-weight: 600; margin-bottom: 12px; }
+.mo-ta-ngan { color: var(--chu-phu); margin-bottom: 20px; }
+
+.chon-sl { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+.nhan { font-weight: 600; }
+.nut-sl { width: 38px; height: 38px; font-size: 20px; border: 1px solid var(--vien); border-radius: 8px; background: #fff; cursor: pointer; }
+.nut-sl:hover { background: var(--xanh-nhat); border-color: var(--xanh); }
+.so-sl { min-width: 32px; text-align: center; font-size: 20px; font-weight: 700; }
+.gioi-han { color: var(--chu-phu); font-size: 13px; }
+
+.nut-them { padding: 14px 28px; font-size: 17px; }
+.xem-gio { display: inline-block; margin-left: 14px; color: var(--xanh-dam); font-weight: 600; }
+.xem-gio:hover { text-decoration: underline; }
+
+.khoi-mo-ta { background: #fff; border: 1px solid var(--vien); border-radius: 12px; padding: 24px; margin-top: 24px; }
+.khoi-mo-ta h2 { font-size: 20px; margin-bottom: 10px; }
+.khoi-mo-ta p { margin-bottom: 20px; }
+.bang-tin { width: 100%; border-collapse: collapse; }
+.bang-tin td { padding: 10px 12px; border-bottom: 1px solid var(--vien); }
+.bang-tin td:first-child { width: 35%; font-weight: 600; background: var(--nen); }
+
+@media (max-width: 768px) {
+  .chi-tiet { grid-template-columns: 1fr; padding: 16px; gap: 20px; }
+  .anh-lon { height: 240px; font-size: 110px; }
+  .cot-tin h1 { font-size: 22px; }
+  .nut-them { width: 100%; }
+  .xem-gio { margin: 12px 0 0; }
+}
+
+/* Ảnh sản phẩm lớn và ảnh nhỏ */
+.anh-lon img { width: 100%; height: 100%; object-fit: contain; padding: 16px; }
+.anh-nho button { padding: 4px; }
+.anh-nho button img { width: 100%; height: 100%; object-fit: contain; }
+
+/* ===== Ảnh thật: ảnh lớn + ảnh nhỏ ===== */
+.anh-lon { height: auto; aspect-ratio: 1 / 1; max-width: 420px; overflow: hidden; }
+.anh-lon img { display: block; width: 100%; height: 100%; object-fit: cover; padding: 0; }
+.anh-nho button { padding: 0; overflow: hidden; }
+.anh-nho button img { display: block; width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 768px) {
+  .anh-lon { height: auto; max-width: 100%; font-size: inherit; }
+}

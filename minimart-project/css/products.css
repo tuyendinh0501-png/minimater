@@ -1,0 +1,28 @@
+/* ===== products.css – TV2: Danh sách sản phẩm ===== */
+main.container { padding-top: 28px; padding-bottom: 12px; }
+
+.khu-loc { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 22px; }
+.nut-loc { display: flex; flex-wrap: wrap; gap: 8px; }
+.btn-loc { padding: 8px 16px; border: 1px solid var(--vien); border-radius: 20px; background: #fff; font-size: 14px; font-weight: 600; cursor: pointer; }
+.btn-loc:hover { border-color: var(--xanh); }
+.btn-loc.active { background: var(--xanh); border-color: var(--xanh); color: #fff; }
+
+.o-timkiem { padding: 10px 14px; border: 1px solid var(--vien); border-radius: 8px; font-size: 15px; width: 280px; max-width: 100%; }
+.o-timkiem:focus { outline: 2px solid var(--xanh); border-color: var(--xanh); }
+
+.khong-thay { display: none; text-align: center; font-size: 18px; color: var(--chu-phu); padding: 40px 0; }
+
+@media (max-width: 768px) {
+  .o-timkiem { width: 100%; }
+}
+
+/* Nút thêm vào giỏ trên thẻ */
+.nut-them-gio { margin-top: 8px; }
+
+/* Icon ảnh trên nút lọc */
+.icon-loc { width: 22px; height: 22px; object-fit: contain; vertical-align: middle; margin-right: 2px; }
+.btn-loc.active .icon-loc { background: #fff; border-radius: 50%; }
+
+/* ===== Ảnh thật: icon trên nút lọc ===== */
+.icon-loc { width: 24px; height: 24px; object-fit: cover; border-radius: 50%; }
+.btn-loc.active .icon-loc { background: none; }

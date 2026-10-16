@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sữa tươi nguyên chất 1L – MiniMart</title>
+  <link rel="icon" href="images/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/detail.css">
+</head>
+<body>
+
+  <!-- ===== HEADER (mẫu chung) ===== -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">🛒 Mini<span>Mart</span></a>
+      <button class="menu-btn" onclick="doiMenu()" aria-label="Mở menu">☰</button>
+      <nav id="menu" class="nav">
+        <a href="index.html">Trang chủ</a>
+        <a href="products.html" class="active">Sản phẩm</a>
+        <a href="member.html">Hội viên &amp; Ưu đãi</a>
+        <a href="cart.html">🧺 Giỏ hàng</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Đường dẫn -->
+    <p class="duong-dan">
+      <a href="index.html">Trang chủ</a> › <a href="products.html">Sản phẩm</a> › Sữa tươi nguyên chất 1L
+    </p>
+    <a href="products.html" class="quay-lai">← Quay lại danh sách sản phẩm</a>
+
+    <!-- ===== 2 CỘT: ẢNH | THÔNG TIN ===== -->
+    <div class="chi-tiet">
+      <div class="cot-anh">
+        <div class="anh-lon"><img id="anhLon" src="images/products/sua-tuoi.jpg" alt="Sữa tươi nguyên chất 1L"></div>
+        <div class="anh-nho">
+          <button onclick="doiAnh('images/products/sua-tuoi.jpg')" aria-label="Ảnh 1"><img src="images/products/sua-tuoi.jpg" alt="Ảnh 1"></button>
+          <button onclick="doiAnh('images/products/sua-tuoi-2.jpg')" aria-label="Ảnh 2"><img src="images/products/sua-tuoi-2.jpg" alt="Ảnh 2"></button>
+          <button onclick="doiAnh('images/products/sua-tuoi-3.jpg')" aria-label="Ảnh 3"><img src="images/products/sua-tuoi-3.jpg" alt="Ảnh 3"></button>
+        </div>
+      </div>
+
+      <div class="cot-tin">
+        <h1>Sữa tươi nguyên chất 1L</h1>
+        <p class="gia">32.000đ</p>
+        <p class="tinh-trang">✔ Còn hàng</p>
+        <p class="mo-ta-ngan">Sữa tươi thanh trùng 100% nguyên chất, không đường, giữ trọn vị béo tự nhiên. Phù hợp cho cả gia đình.</p>
+
+        <div class="chon-sl">
+          <span class="nhan">Số lượng:</span>
+          <button class="nut-sl" onclick="doiSL(-1)" aria-label="Giảm">−</button>
+          <span id="sl" class="so-sl">1</span>
+          <button class="nut-sl" onclick="doiSL(1)" aria-label="Tăng">+</button>
+          <span class="gioi-han">(tối đa 10)</span>
+        </div>
+
+        <button class="btn btn-cam nut-them" onclick="themGio()">🧺 Thêm vào giỏ hàng</button>
+        <a href="cart.html" class="xem-gio">Xem giỏ hàng →</a>
+      </div>
+    </div>
+
+    <!-- ===== MÔ TẢ + THÔNG TIN THÊM ===== -->
+    <section class="khoi-mo-ta">
+      <h2>Mô tả sản phẩm</h2>
+      <p>Sữa tươi nguyên chất được lấy từ trang trại bò sữa đạt chuẩn, qua thanh trùng nhanh để giữ nguyên dưỡng chất. Sản phẩm giàu canxi, protein và vitamin D, thích hợp uống trực tiếp, làm sinh tố hoặc nấu ăn.</p>
+
+      <h2>Thông tin thêm</h2>
+      <table class="bang-tin">
+        <tr><td>Thương hiệu</td><td>MiniMart Fresh</td></tr>
+        <tr><td>Dung tích</td><td>1 lít</td></tr>
+        <tr><td>Hạn sử dụng</td><td>7 ngày kể từ ngày sản xuất</td></tr>
+        <tr><td>Bảo quản</td><td>Nơi mát 2–6°C, đã mở nên dùng trong 3 ngày</td></tr>
+        <tr><td>Xuất xứ</td><td>Việt Nam</td></tr>
+      </table>
+    </section>
+  </main>
+
+  <!-- Thông báo "Đã thêm vào giỏ hàng" -->
+  <div id="thongbao" class="toast"></div>
+
+  <!-- ===== FOOTER (mẫu chung) ===== -->
+  <footer class="footer">
+    <div class="container footer-luoi">
+      <div>
+        <h4>🛒 MiniMart</h4>
+        <p>Siêu thị mini tiện lợi – hàng tươi mỗi ngày, giao nhanh tận nhà.</p>
+        <p>📍 123 Đường Mẫu, Quận 1 &nbsp;|&nbsp; ☎ 0900 000 000</p>
+      </div>
+      <div>
+        <h4>Điều hướng</h4>
+        <a href="index.html">Trang chủ</a>
+        <a href="products.html">Sản phẩm</a>
+        <a href="cart.html">Giỏ hàng</a>
+        <a href="member.html">Hội viên &amp; Ưu đãi</a>
+      </div>
+      <div>
+        <h4>Hỗ trợ</h4>
+        <a href="#">Giờ mở cửa: 7:00 – 22:00</a>
+        <a href="#">Phí giao hàng: 15.000đ</a>
+      </div>
+    </div>
+    <div class="ban-quyen">© 2026 MiniMart – Bài tập lớn Thiết kế Web</div>
+  </footer>
+
+  <script src="js/detail.js"></script>
+</body>
+</html>

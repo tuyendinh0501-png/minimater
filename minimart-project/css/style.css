@@ -1,0 +1,92 @@
+/* ===== style.css – CSS dùng chung (TV1) ===== */
+:root {
+  --xanh: #2e9e4f;
+  --xanh-dam: #1f7a3a;
+  --xanh-nhat: #e8f6ec;
+  --cam: #ff8a1f;
+  --cam-dam: #e57200;
+  --chu: #22302a;
+  --chu-phu: #66756c;
+  --nen: #f6faf5;
+  --vien: #dce7df;
+  --do: #d93025;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--chu);
+  background: var(--nen);
+  line-height: 1.5;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; }
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+section { padding: 32px 0; }
+
+/* ----- Header ----- */
+.header { background: #fff; border-bottom: 1px solid var(--vien); position: sticky; top: 0; z-index: 50; }
+.header-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 12px; padding-bottom: 12px; }
+.logo { font-size: 24px; font-weight: 800; color: var(--xanh); }
+.logo span { color: var(--cam); }
+.nav { display: flex; gap: 8px; }
+.nav a { padding: 8px 14px; border-radius: 20px; font-weight: 600; }
+.nav a:hover, .nav a.active { background: var(--xanh-nhat); color: var(--xanh-dam); }
+.menu-btn { display: none; font-size: 22px; background: none; border: 1px solid var(--vien); border-radius: 8px; padding: 4px 12px; cursor: pointer; }
+
+/* ----- Nút ----- */
+.btn { display: inline-block; padding: 10px 20px; border: none; border-radius: 8px; background: var(--xanh); color: #fff; font-size: 15px; font-weight: 600; cursor: pointer; transition: background .2s; text-align: center; }
+.btn:hover { background: var(--xanh-dam); }
+.btn-cam { background: var(--cam); }
+.btn-cam:hover { background: var(--cam-dam); }
+.btn-vien { background: #fff; color: var(--xanh-dam); border: 2px solid var(--xanh); }
+.btn-vien:hover { background: var(--xanh-nhat); }
+
+/* ----- Tiêu đề khối ----- */
+.tieu-de { font-size: 24px; margin-bottom: 18px; border-left: 5px solid var(--cam); padding-left: 10px; }
+
+/* ----- Thẻ sản phẩm ----- */
+.luoi-sp { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.card { background: #fff; border: 1px solid var(--vien); border-radius: 12px; overflow: hidden; transition: transform .2s, box-shadow .2s; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,.08); }
+.card-anh { aspect-ratio: 1 / 1; overflow: hidden; background: var(--xanh-nhat); }
+.card-noidung { padding: 14px; }
+.card-ten { font-weight: 600; margin-bottom: 4px; min-height: 48px; }
+.card-gia { color: var(--cam-dam); font-weight: 800; font-size: 18px; margin-bottom: 10px; }
+.card .btn { display: block; width: 100%; }
+
+/* ----- Thông báo nổi ----- */
+.toast { display: none; position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: var(--xanh-dam); color: #fff; padding: 12px 24px; border-radius: 8px; z-index: 100; box-shadow: 0 4px 14px rgba(0,0,0,.25); max-width: 90%; text-align: center; }
+
+/* ----- Form chung ----- */
+.nhom-form { margin-bottom: 14px; }
+.nhom-form label { display: block; font-weight: 600; margin-bottom: 4px; }
+.nhom-form input, .nhom-form textarea { width: 100%; padding: 10px 12px; border: 1px solid var(--vien); border-radius: 8px; font-size: 15px; font-family: inherit; }
+.nhom-form input:focus, .nhom-form textarea:focus { outline: 2px solid var(--xanh); border-color: var(--xanh); }
+.loi { display: block; color: var(--do); font-size: 13px; min-height: 18px; margin-top: 2px; }
+
+/* ----- Footer ----- */
+.footer { background: #17261d; color: #cfe0d4; margin-top: 32px; }
+.footer-luoi { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 24px; padding-top: 32px; padding-bottom: 24px; }
+.footer h4 { color: #fff; margin-bottom: 8px; }
+.footer a { display: block; padding: 2px 0; }
+.footer a:hover { color: var(--cam); }
+.ban-quyen { border-top: 1px solid #2c4034; text-align: center; padding: 14px; font-size: 14px; }
+
+/* ----- Responsive ----- */
+@media (max-width: 992px) {
+  .luoi-sp { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+  .luoi-sp { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .menu-btn { display: block; }
+  .nav { display: none; flex-direction: column; width: 100%; }
+  .nav.open { display: flex; }
+  .footer-luoi { grid-template-columns: 1fr; }
+}
+@media (max-width: 400px) {
+  .card-noidung { padding: 10px; }
+}
+
+/* ----- Ảnh sản phẩm ----- */
+.card-anh img { display: block; width: 100%; height: 100%; object-fit: cover; }

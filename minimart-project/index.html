@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiniMart – Siêu thị mini tiện lợi</title>
+  <link rel="icon" href="images/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+  <!-- ===== HEADER (mẫu chung) ===== -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">🛒 Mini<span>Mart</span></a>
+      <button class="menu-btn" onclick="doiMenu()" aria-label="Mở menu">☰</button>
+      <nav id="menu" class="nav">
+        <a href="index.html" class="active">Trang chủ</a>
+        <a href="products.html">Sản phẩm</a>
+        <a href="member.html">Hội viên &amp; Ưu đãi</a>
+        <a href="cart.html">🧺 Giỏ hàng</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== BANNER ===== -->
+    <section class="banner">
+      <div class="container banner-inner">
+        <div class="banner-chu">
+          <h1>Mua sắm nhanh, giao tận nhà trong 30 phút</h1>
+          <p>Hàng tươi mỗi ngày, giá hợp lý cho cả gia đình. Đăng ký hội viên để nhận thêm nhiều ưu đãi.</p>
+          <form class="o-tim" action="products.html">
+            <input type="text" placeholder="Bạn muốn tìm gì hôm nay?" aria-label="Tìm sản phẩm">
+            <button type="submit" class="btn btn-cam">Tìm kiếm</button>
+          </form>
+          <a href="products.html" class="btn btn-vien">Mua sắm ngay</a>
+        </div>
+        <div class="banner-hinh">
+          <img src="images/products/rau-cai.jpg" alt="Rau cải">
+          <img src="images/products/sua-tuoi.jpg" alt="Sữa tươi">
+          <img src="images/products/ca-chua.jpg" alt="Cà chua">
+          <img src="images/products/nuoc-cam.jpg" alt="Nước cam">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DANH MỤC ===== -->
+    <section>
+      <div class="container">
+        <h2 class="tieu-de">Danh mục sản phẩm</h2>
+        <div class="luoi-dm">
+          <a href="products.html" class="dm"><img src="images/products/sua-tuoi.jpg" alt="Sữa &amp; chế phẩm">Sữa &amp; chế phẩm</a>
+          <a href="products.html" class="dm"><img src="images/products/rau-cai.jpg" alt="Rau củ quả">Rau củ quả</a>
+          <a href="products.html" class="dm"><img src="images/products/thit-ba-chi.jpg" alt="Thịt &amp; trứng">Thịt &amp; trứng</a>
+          <a href="products.html" class="dm"><img src="images/products/banh-quy.jpg" alt="Bánh kẹo">Bánh kẹo</a>
+          <a href="products.html" class="dm"><img src="images/products/nuoc-cam.jpg" alt="Đồ uống">Đồ uống</a>
+          <a href="products.html" class="dm"><img src="images/products/nuoc-rua-chen.jpg" alt="Đồ gia dụng">Đồ gia dụng</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SẢN PHẨM NỔI BẬT ===== -->
+    <section>
+      <div class="container">
+        <h2 class="tieu-de">Sản phẩm nổi bật</h2>
+        <div class="luoi-sp">
+          <div class="card">
+            <div class="card-anh"><img src="images/products/sua-tuoi.jpg" alt="Sữa tươi nguyên chất 1L"></div>
+            <div class="card-noidung">
+              <div class="card-ten">Sữa tươi nguyên chất 1L</div>
+              <div class="card-gia">32.000đ</div>
+              <a href="product-detail.html" class="btn">Xem chi tiết</a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-anh"><img src="images/products/ca-chua.jpg" alt="Cà chua tươi 500g"></div>
+            <div class="card-noidung">
+              <div class="card-ten">Cà chua tươi 500g</div>
+              <div class="card-gia">20.000đ</div>
+              <a href="product-detail.html" class="btn">Xem chi tiết</a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-anh"><img src="images/products/trung-ga.jpg" alt="Trứng gà sạch (hộp 10 quả)"></div>
+            <div class="card-noidung">
+              <div class="card-ten">Trứng gà sạch (hộp 10 quả)</div>
+              <div class="card-gia">35.000đ</div>
+              <a href="product-detail.html" class="btn">Xem chi tiết</a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-anh"><img src="images/products/banh-quy.jpg" alt="Bánh quy bơ giòn tan"></div>
+            <div class="card-noidung">
+              <div class="card-ten">Bánh quy bơ giòn tan</div>
+              <div class="card-gia">25.000đ</div>
+              <a href="product-detail.html" class="btn">Xem chi tiết</a>
+            </div>
+          </div>
+        </div>
+        <p class="xem-them"><a href="products.html" class="btn btn-vien">Xem tất cả sản phẩm →</a></p>
+      </div>
+    </section>
+
+    <!-- ===== KHUYẾN MÃI ===== -->
+    <section>
+      <div class="container">
+        <h2 class="tieu-de">Khuyến mãi hôm nay</h2>
+        <div class="luoi-km">
+          <div class="km km-1">
+            <h3>Giảm 20%</h3>
+            <p>Rau củ quả tươi mỗi sáng thứ Bảy</p>
+          </div>
+          <div class="km km-2">
+            <h3>Mua 2 tặng 1</h3>
+            <p>Sữa chua uống men sống</p>
+          </div>
+          <div class="km km-3">
+            <h3>Freeship</h3>
+            <p>Đơn từ 199.000đ trong bán kính 3km</p>
+            <a href="member.html">Xem ưu đãi hội viên →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER (mẫu chung) ===== -->
+  <footer class="footer">
+    <div class="container footer-luoi">
+      <div>
+        <h4>🛒 MiniMart</h4>
+        <p>Siêu thị mini tiện lợi – hàng tươi mỗi ngày, giao nhanh tận nhà.</p>
+        <p>📍 123 Đường Mẫu, Quận 1 &nbsp;|&nbsp; ☎ 0900 000 000</p>
+      </div>
+      <div>
+        <h4>Điều hướng</h4>
+        <a href="index.html">Trang chủ</a>
+        <a href="products.html">Sản phẩm</a>
+        <a href="cart.html">Giỏ hàng</a>
+        <a href="member.html">Hội viên &amp; Ưu đãi</a>
+      </div>
+      <div>
+        <h4>Hỗ trợ</h4>
+        <a href="#">Giờ mở cửa: 7:00 – 22:00</a>
+        <a href="#">Phí giao hàng: 15.000đ</a>
+      </div>
+    </div>
+    <div class="ban-quyen">© 2026 MiniMart – Bài tập lớn Thiết kế Web</div>
+  </footer>
+
+  <script src="js/home.js"></script>
+</body>
+</html>
